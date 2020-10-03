@@ -91,6 +91,13 @@ public class Game {
 	private void play() {
 		int playedRounds = 0;
 		
+		/* aca importo el mazo pero creo que al crear el juego vos ya creas un mazo 
+		 * supongo que seria meterlo ahi dentro */
+		String mazoPath = "./src/VisorMazo/superheroes.json";
+		CardDeck cd1 = new CardDeck("cd1"); 
+		cd1.importCardDeck(mazoPath);
+		
+		
 		while ((playedRounds < maxRounds) && 
 				(player1.getAmountOfCards() > 0) &&
 					(player2.getAmountOfCards() > 0)) {
