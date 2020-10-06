@@ -20,33 +20,25 @@ public class Player {
 		this.name = name;
 	}
 	
-	
 	public void addCard(Card c1) {
 		myCards.add(c1);
 	}
 	
-	
 	public Card getFirstCard() {
-		int i = 0;
-		return myCards.remove(i);
+		return myCards.remove(0);
 	}
-	
 	
 	//devuelve la totalidad de cartas
 	public int getAmountOfCards() {
-		
 		return myCards.size();
-		
 	}
 	
 	//elije un numero al azar para ver quien empieza el juego
-	public int pickNumber() {
-		
-		int max=10;
-		
-		int i = (int) Math.floor((Math.random()*max)+1);
-		return i;
-		
+	public double pickNumber() {
+//		int max=10;
+//		int i = (int) Math.floor((Math.random()*max)+1);
+//		return i;
+		return Math.random();
 	}
 	
 

@@ -53,9 +53,15 @@ public class Atribut {
 		
 	}
 	
-	public void compare(Atribut at2) {
-		if(this.exceedAtribut(at2)) {
-			
+	public int compareAtribut(Atribut at) {
+		if (this.value > at.getValue()) {
+			return 1;
+		}
+		else if(this.value < at.getValue()) {
+			return -1;
+		}
+		else {
+			return 0;
 		}
 	}
 	

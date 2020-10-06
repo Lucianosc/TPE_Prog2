@@ -49,6 +49,15 @@ public class CardDeck {
         }
 	}
 	
+	public void verifyCardDeck() {
+		Card firstCard = cards.get(0);
+		for (int i = 0; i < cards.size(); i++) {
+			if(firstCard.compareCard(cards.get(i))){
+				cards.remove(i);
+			}
+		}
+	}
+	
 	public String getName() {
 		return name;
 	}
