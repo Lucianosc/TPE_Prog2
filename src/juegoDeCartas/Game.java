@@ -99,10 +99,9 @@ public class Game {
 	public void startRound() {
 		
 		String playedAtribut = roundWinner.getFirstCard().getRandomAtrName();
-	
 		Card card1 = player1.getFirstCard();
 		Card card2 = player2.getFirstCard();
-	
+
 //			if (card1.getByName(playedAtribut)
 //					.exceedAtribut(card2.getByName(playedAtribut))) {
 //				
@@ -116,8 +115,13 @@ public class Game {
 //			else {	
 //				this.setWinner(player2 , card1, card2);	
 //			}
-			int compare = card1.getByName(playedAtribut)
-					.compareAtribut(card2.getByName(playedAtribut));
+//		System.out.println(playedAtribut);
+//		System.out.println("carta1: "+card1.getAtrByName(playedAtribut));
+//		System.out.println("carta2: "+card2.getAtrByName(playedAtribut));
+//		
+			int compare = card1.getAtrByName(playedAtribut).compareAtribut(card2.getAtrByName(playedAtribut));
+			
+			
 			switch (compare) {
 				case 1: 
 					this.setWinner(player1 , card1, card2);

@@ -42,20 +42,27 @@ public class Card {
 		
 		return atributs.get(i).getName();	
 	}
-	
-	public boolean containsAtribut(Atribut atr) {
-		return atributs.contains(atr);
-	}
-	
+//	
+//	public boolean containsAtribut(Atribut atr) {
+//		if(!atributs.contains(atr)) {
+//			return false;
+//		}
+//		return true;
+//	}
+//	
 	//reveer, agarro un atributo de la carta por medio
 	//del nombre del atributo que eligio el jugador que inicio la ronda
 	
-	public Atribut getByName(String name ) {
-		for(int i=0; i<atributs.size(); i++) {
-			Atribut aux = atributs.get(i);
-//			if(aux.getName().equals(name))
-			if(aux.getName() == name)
-				return aux;
+	public Atribut getAtrByName(String nameAtr) {
+		for (int i = 0; i < atributs.size(); i++) {
+			
+			System.out.println(nameAtr);
+			System.out.println(atributs.get(i).getName());
+			
+			if (nameAtr == (atributs.get(i).getName())) {
+				System.out.println("hola");
+				return atributs.get(i);
+			}
 		}
 		return null;
 	}
@@ -82,10 +89,8 @@ public class Card {
 	}
 	
 	public boolean compareCard(Card c) {
-		for (Atribut a : atributs) {
-			if(!c.containsAtribut(a)) {
-				return false;
-			}
+		if(!this.atributs.containsAll(c.getAtributs())) {
+			return false;
 		}
 		return true;
 	}
@@ -103,5 +108,8 @@ public class Card {
 //		}
 //	}
 	
+	public String toString() {
+		return name+" "+atributs+"\n";
+	}
 
 }

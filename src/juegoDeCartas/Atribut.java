@@ -65,6 +65,8 @@ public class Atribut {
 		}
 	}
 	
-	
+	public String toString() {
+		return name+": "+value;
+	}
 
 }

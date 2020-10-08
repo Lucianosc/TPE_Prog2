@@ -41,7 +41,9 @@ public class Player {
 		return Math.random();
 	}
 	
-
+	public String toString() {
+		return name+" "+myCards;
+	}
 	
 
 }
