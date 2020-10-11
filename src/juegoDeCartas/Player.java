@@ -27,8 +27,11 @@ public class Player {
 	
 	
 	public Card getFirstCard() {
-		int i = 0;
-		return myCards.remove(i);
+		return myCards.get(0);
+	}
+	
+	public Card pickFirstCard() {
+		return myCards.remove(0);
 	}
 	
 	
@@ -55,5 +58,4 @@ public class Player {
 	}
 	
 	
-
 }

@@ -80,14 +80,11 @@ public class CardDeck {
 		if(cards.size()== 0) { //si el arreglo esta vacio, suma la carta sin verificar
 			cards.add(c1);
 		}else {
-			Card first = cards.get(0); // una vez que el mazo tiene cartas agarra la primera
-			if(first.verifyCard(c1)) { //y compara todas en funcion de esa
+			Card firstCard = cards.get(0); // una vez que el mazo tiene cartas agarra la primera
+			if(firstCard.verifyCard(c1)) { //y compara todas en funcion de esa
 				cards.add(c1);
 			}
 		}
-		
-		cards.add(c1);
-		
 	}
 	
 	public Card firstCard() {

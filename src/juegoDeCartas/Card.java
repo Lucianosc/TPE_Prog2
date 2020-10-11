@@ -65,20 +65,12 @@ public class Card {
 	
 
 	public boolean verifyCard(Card card) {
-	
-		if(this.getAtributsQuantity() == card.getAtributsQuantity()) {
-			
-			for (int i = 0 ; i< this.atributs.size();i++) {
-				Atribut atribut = this.atributs.get(i);
-				
-				if(!card.containsAtribut(atribut)) {
-					return false;
-				}
-			}
+		if(atributs.containsAll(card.getAtributs())) {
 			return true;
 		}
-		
-		return false;
+		else {
+			return false;
+		}
 	}
 	
 	public int getAtributsQuantity() {

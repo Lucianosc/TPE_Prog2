@@ -76,6 +76,7 @@ public class Game {
 				player1.addCard(cards.firstCard());
 			}
 		}
+
 	}
 	
 	private void setFirstHand() {
@@ -90,15 +91,21 @@ public class Game {
 	
 	private void play() {
 		int playedRounds = 0;
-		
+
 		while ((playedRounds < maxRounds) && 
 				(player1.getAmountOfCards() > 0) &&
 					(player2.getAmountOfCards() > 0)) {
 			
-			startRound();
-			
 			playedRounds++;
 			this.addHistoryLog("------- Ronda "+playedRounds+" -------\n");
+			
+			startRound();
+		}
+		
+		if(player1.getAmountOfCards() > player2.getAmountOfCards()) {
+			this.addHistoryLog("\n"+player1+" Gana el Juego!!!");
+		} else {
+			this.addHistoryLog("\n"+player2+" Gana el Juego!!!");
 		}
 	}
 	
@@ -113,34 +120,32 @@ public class Game {
 		
 		String playedAtribut = roundWinner.getFirstCard().getRandomAtr();
 		
-		Card card1 = player1.getFirstCard();
-		Card card2 = player1.getFirstCard();
-		
+		Card card1 = player1.pickFirstCard();
+		Card card2 = player2.pickFirstCard();
+
 		Atribut atr1 = card1.getAtrByName(playedAtribut);
 		Atribut atr2 = card2.getAtrByName(playedAtribut);
-		int comparison = atr1.compareTo(atr2);
 		
 		this.addHistoryLog("El Jugador "+roundWinner+" selecciona competir por el atributo "+playedAtribut+"\n");
 		this.addHistoryLog("La Carta de "+player1+" es "+card1+" con "+atr1+"\n");
 		this.addHistoryLog("La Carta de "+player2+" es "+card2+" con "+atr2+"\n");
 		
-			switch (comparison) {
-			case 1: 
-				this.setWinner(player1 , card1, card2);
-				break;
-				
-			case 0: 
-				player1.addCard(card1);
-				player2.addCard(card2);	
-				break;
-				
-			case -1: 
-				this.setWinner(player2 , card1, card2);
-				break;
+		int comparison = atr1.compareTo(atr2);
+		
+		if (comparison > 0) {
+			this.setWinner(player1 , card1, card2);
 		}
+		else if (comparison < 0) {
+			this.setWinner(player2 , card1, card2);
+		}
+		else {
+			player1.addCard(card1);
+			player2.addCard(card2);
+		}
+
 		this.addHistoryLog("Gana la ronda "+roundWinner+"\n");
-		this.addHistoryLog(player1+" posee ahora "+player1.getAmountOfCards()+" y "+
-				player2+" posee ahora "+player2.getAmountOfCards()+"\n");
+		this.addHistoryLog(player1+" posee ahora "+player1.getAmountOfCards()+" cartas y "+
+				player2+" posee ahora "+player2.getAmountOfCards()+" cartas\n");
 	}
 	
 	private void setWinner(Player player, Card card1, Card card2) {
