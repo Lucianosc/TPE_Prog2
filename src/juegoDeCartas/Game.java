@@ -98,6 +98,7 @@ public class Game {
 			startRound();
 			
 			playedRounds++;
+			this.addHistoryLog("------- Ronda "+playedRounds+" -------\n");
 		}
 	}
 	
@@ -111,13 +112,18 @@ public class Game {
 	public void startRound() {
 		
 		String playedAtribut = roundWinner.getFirstCard().getRandomAtr();
-	
+		
 		Card card1 = player1.getFirstCard();
 		Card card2 = player1.getFirstCard();
 		
-		int comparison = card1.getAtrByName(playedAtribut).compareTo(card2.getAtrByName(playedAtribut));
+		Atribut atr1 = card1.getAtrByName(playedAtribut);
+		Atribut atr2 = card2.getAtrByName(playedAtribut);
+		int comparison = atr1.compareTo(atr2);
 		
-	
+		this.addHistoryLog("El Jugador "+roundWinner+" selecciona competir por el atributo "+playedAtribut+"\n");
+		this.addHistoryLog("La Carta de "+player1+" es "+card1+" con "+atr1+"\n");
+		this.addHistoryLog("La Carta de "+player2+" es "+card2+" con "+atr2+"\n");
+		
 			switch (comparison) {
 			case 1: 
 				this.setWinner(player1 , card1, card2);
@@ -132,7 +138,9 @@ public class Game {
 				this.setWinner(player2 , card1, card2);
 				break;
 		}
-		
+		this.addHistoryLog("Gana la ronda "+roundWinner+"\n");
+		this.addHistoryLog(player1+" posee ahora "+player1.getAmountOfCards()+" y "+
+				player2+" posee ahora "+player2.getAmountOfCards()+"\n");
 	}
 	
 	private void setWinner(Player player, Card card1, Card card2) {
@@ -140,9 +148,6 @@ public class Game {
 		player.addCard(card1);
 		this.setRoundWinner(player);
 	}
-	
-	
-	
 	
 	
 }

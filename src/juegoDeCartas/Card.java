@@ -65,7 +65,7 @@ public class Card {
 	
 
 	public boolean verifyCard(Card card) {
-		
+	
 		if(this.getAtributsQuantity() == card.getAtributsQuantity()) {
 			
 			for (int i = 0 ; i< this.atributs.size();i++) {
@@ -86,9 +86,9 @@ public class Card {
 	}
 	
 	
-	
+	@Override
 	public String toString() {
-		return name+" "+atributs+"\n";
+		return name;
 	}
 
 }

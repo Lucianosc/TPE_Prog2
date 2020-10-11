@@ -67,8 +67,9 @@ public class Atribut implements Comparable<Atribut> {
 		}
 	}
 	
+	@Override
 	public String toString() {
-		return name+": "+value;
+		return name+" "+value;
 	}
 
 	
