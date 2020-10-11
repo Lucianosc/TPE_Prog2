@@ -8,6 +8,7 @@ public class Main {
 		Player p1 = new Player("Lucho");
 		Player p2 = new Player("Rope");
 		CardDeck cd1 = new CardDeck("MazoImportado");
+		
 		cd1.importCardDeck(mazoPath);
 		cd1.verifyCardDeck();
 

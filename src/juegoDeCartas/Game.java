@@ -16,7 +16,6 @@ public class Game {
 		this.maxRounds = maxRounds;
 		this.roundWinner = roundWinner;
 		historyLog = " ";
-		
 	}
 	
 	public String getHistoryLog() {
@@ -119,8 +118,8 @@ public class Game {
 //		System.out.println("carta1: "+card1.getAtrByName(playedAtribut));
 //		System.out.println("carta2: "+card2.getAtrByName(playedAtribut));
 //		
+
 			int compare = card1.getAtrByName(playedAtribut).compareAtribut(card2.getAtrByName(playedAtribut));
-			
 			
 			switch (compare) {
 				case 1: 

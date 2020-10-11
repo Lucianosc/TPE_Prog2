@@ -50,17 +50,14 @@ public class Card {
 //		return true;
 //	}
 //	
-	//reveer, agarro un atributo de la carta por medio
-	//del nombre del atributo que eligio el jugador que inicio la ronda
+	
+//	reveer, agarro un atributo de la carta por medio
+//	del nombre del atributo que eligio el jugador que inicio la ronda
 	
 	public Atribut getAtrByName(String nameAtr) {
 		for (int i = 0; i < atributs.size(); i++) {
-			
-			System.out.println(nameAtr);
-			System.out.println(atributs.get(i).getName());
-			
-			if (nameAtr == (atributs.get(i).getName())) {
-				System.out.println("hola");
+
+			if (nameAtr.equals((atributs.get(i).getName()))) {
 				return atributs.get(i);
 			}
 		}
