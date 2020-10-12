@@ -10,12 +10,13 @@ public class Main {
 		CardDeck cd1 = new CardDeck("MazoImportado");
 		
 		cd1.importCardDeck(mazoPath);
-		cd1.verifyCardDeck();
-
+		
+		System.out.println(cd1+"\n");
+		
 		Game g1 = new Game(p1, p2, cd1, 50, p1);
 		
 		g1.startGame();
-		
+		System.out.println(g1.getHistoryLog());
 
 	}
 					

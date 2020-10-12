@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\roope\Desktop\PROG II\lucho\TPE_Prog2\.metadata\.plugins\org.eclipse.jdt.core
+1671692264.index
