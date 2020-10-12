@@ -49,8 +49,7 @@ public class Card {
 		return atributs.contains(atr);
 	}
 	
-	
-	//reveer, agarro un atributo de la carta por medio
+	//Agarro el atributo de la carta por medio
 	//del nombre del atributo que eligio el jugador que inicio la ronda
 	
 	public Atribut getAtrByName(String name ) {

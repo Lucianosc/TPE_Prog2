@@ -146,6 +146,7 @@ public class Game {
 		this.addHistoryLog("Gana la ronda "+roundWinner+"\n");
 		this.addHistoryLog(player1+" posee ahora "+player1.getAmountOfCards()+" cartas y "+
 				player2+" posee ahora "+player2.getAmountOfCards()+" cartas\n");
+
 	}
 	
 	private void setWinner(Player player, Card card1, Card card2) {
