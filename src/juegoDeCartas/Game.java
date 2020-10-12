@@ -97,9 +97,10 @@ public class Game {
 					(player2.getAmountOfCards() > 0)) {
 			
 			playedRounds++;
-			this.addHistoryLog("------- Ronda "+playedRounds+" -------\n");
+			this.addHistoryLog("------- Ronda "+playedRounds+" -------\n\n");
 			
 			startRound();
+			
 		}
 		
 		if(player1.getAmountOfCards() > player2.getAmountOfCards()) {
@@ -107,6 +108,7 @@ public class Game {
 		} else {
 			this.addHistoryLog("\n"+player2+" Gana el Juego!!!");
 		}
+		
 	}
 	
 	public void startGame() {
@@ -145,8 +147,8 @@ public class Game {
 
 		this.addHistoryLog("Gana la ronda "+roundWinner+"\n");
 		this.addHistoryLog(player1+" posee ahora "+player1.getAmountOfCards()+" cartas y "+
-				player2+" posee ahora "+player2.getAmountOfCards()+" cartas\n");
-
+				player2+" posee ahora "+player2.getAmountOfCards()+" cartas\n\n");
+	
 	}
 	
 	private void setWinner(Player player, Card card1, Card card2) {

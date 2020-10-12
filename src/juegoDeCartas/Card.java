@@ -62,15 +62,23 @@ public class Card {
 		return null;
 	}
 	
-
+	
 	public boolean verifyCard(Card card) {
-		if(atributs.containsAll(card.getAtributs())) {
-			return true;
-		}
-		else {
+			
+			if(this.getAtributsQuantity() == card.getAtributsQuantity()) {
+				
+				for (int i = 0 ; i< this.atributs.size();i++) {
+					Atribut atribut = this.atributs.get(i);
+					
+					if(!card.containsAtribut(atribut)) {
+						return false;
+					}
+				}
+				return true;
+			}
+			
 			return false;
 		}
-	}
 	
 	public int getAtributsQuantity() {
 		return atributs.size();
